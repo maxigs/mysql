@@ -33,4 +33,12 @@ node['mysql']['client']['packages'].each do |mysql_pack|
   resources("package[#{mysql_pack}]").run_action(:install)
 end
 
-chef_gem "mysql"
+b = package "build-essential" do
+  action :nothing
+end
+
+b.run_action(:install)
+
+r = gem_package "mysql" do
+  action :nothing
+end
