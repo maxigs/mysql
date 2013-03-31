@@ -42,3 +42,5 @@ b.run_action(:install)
 r = gem_package "mysql" do
   action :nothing
 end
+
+chef_gem 'mysql'
